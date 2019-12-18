@@ -1,4 +1,7 @@
 <?php
+
+$mistrakecounter = 0;
+
 $foutmelding=NULL;
 
 $woordenlijst=array("gekoloniseerd", "Empire", "Republic", "Mandalorian");
@@ -91,6 +94,7 @@ if(isset($_POST["letter"]) and ($_POST["letter"]!=NULL))
     {
         $foutmelding="<font color=red>Niet voorkomende letter:</font> ";
         $poging++;
+        $mistrakecounter++;
     }
 }
 else
@@ -132,31 +136,57 @@ if($punten==$woord)
 echo '<br>
 <FORM ACTION="'.$zelf.'" width="150" METHOD="POST">
 <b>Probeer de letter:<br>
-<INPUT TYPE="text" NAME="letter" SIZE="1" MAXLENGTH="1">
+<INPUT TYPE="submit" NAME="letter" VALUE="a">
+<INPUT TYPE="submit" NAME="letter" VALUE="b">
+<INPUT TYPE="submit" NAME="letter" VALUE="c">
+<INPUT TYPE="submit" NAME="letter" VALUE="d">
+<INPUT TYPE="submit" NAME="letter" VALUE="e">
+<INPUT TYPE="submit" NAME="letter" VALUE="f">
+<INPUT TYPE="submit" NAME="letter" VALUE="g">
+<INPUT TYPE="submit" NAME="letter" VALUE="h">
+<INPUT TYPE="submit" NAME="letter" VALUE="i">
+<INPUT TYPE="submit" NAME="letter" VALUE="j">
+<INPUT TYPE="submit" NAME="letter" VALUE="k">
+<INPUT TYPE="submit" NAME="letter" VALUE="l">
+<INPUT TYPE="submit" NAME="letter" VALUE="m">
+<INPUT TYPE="submit" NAME="letter" VALUE="n">
+<INPUT TYPE="submit" NAME="letter" VALUE="o">
+<INPUT TYPE="submit" NAME="letter" VALUE="p">
+<INPUT TYPE="submit" NAME="letter" VALUE="q">
+<INPUT TYPE="submit" NAME="letter" VALUE="r">
+<INPUT TYPE="submit" NAME="letter" VALUE="s">
+<INPUT TYPE="submit" NAME="letter" VALUE="t">
+<INPUT TYPE="submit" NAME="letter" VALUE="u">
+<INPUT TYPE="submit" NAME="letter" VALUE="v">
+<INPUT TYPE="submit" NAME="letter" VALUE="w">
+<INPUT TYPE="submit" NAME="letter" VALUE="x">
+<INPUT TYPE="submit" NAME="letter" VALUE="y">
+<INPUT TYPE="submit" NAME="letter" VALUE="z">
 <INPUT TYPE="hidden" NAME="gecodwoord" VALUE="'.$gecod_woord.'">
 <INPUT TYPE="hidden" NAME="bezig" VALUE="'.$punten.'">
 <INPUT TYPE="hidden" NAME="pogingen" VALUE="'.$poging.'">
-<INPUT TYPE="hidden" NAME="geproblet" VALUE="'.$geproblet.'">
-<INPUT TYPE="submit" VALUE="Probeer"></b>';
+<INPUT TYPE="hidden" NAME="geproblet" VALUE="'.$geproblet.'"></b>';
 
 
 
 ?>
 <?php
 
-  if($poging === 1){
+  if($mistrakecounter === 0){
     echo('<img id="dood" src="galgje1.png">');
-  } if($poging === 2) {
+  } if($mistrakecounter === 1) {
     echo('<img id="dood" src="galgje2.png">');
-  } if($poging === 3) {
+  } if($mistrakecounter === 2) {
     echo('<img id="dood" src="galgje3.png">');
-  }if($poging === 4) {
+  }if($mistrakecounter === 3) {
     echo('<img id="dood" src="galgje4.png">');
-  }if($poging === 5) {
+  }if($mistrakecounter === 4) {
     echo('<img id="dood" src="galgje5.png">');
-  }if($poging === 6) {
+  }if($mistrakecounter === 5) {
     echo('<img id="dood" src="galgje6.png">');
-  }if($poging === 7) {
+  }if($mistrakecounter === 6) {
+    echo('<img id="dood" src="galgje7.png">');
+  } if($mistrakecounter === 7) {
     echo('<img id="dood" src="galgje7.png">');
   }
 ?>
